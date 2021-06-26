@@ -9,6 +9,7 @@
 .dark-theme {
     background-color: black;
     color: #ffffff;
+    cursor: pointer;
 }
 
 .scale {
@@ -17,7 +18,7 @@
 }
 
 .scaleText {
-
+    margin: 0 0.5vw;
     font-size: 150%;
 }
 
@@ -76,9 +77,35 @@ Navbar{
     font-weight: 300;
     font-family: Arial, serif;
     font-size: 24px;
-    margin: 5vh;
+    margin: 4vh;
 }
 
 .back {
     padding: 0 7vh;
+}
+
+.initial{
+    margin-top: 15vh;
+}
+#home{
+    cursor: pointer;
+}
+
+.desc{
+    font-weight: 300;
+    font-family: Arial, serif;
+    font-size: 24px;
+    margin: 4vh;
+    width: 25vw;
+}
+
+.addQuiz{
+    background: rgba(251, 206, 55, 1);
+    margin: 5vh auto;
+    width: 70vw;
+}
+.footer{
+    height: 15vh;
+    background: black;
+    color: white;
 }
