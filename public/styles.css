@@ -1,0 +1,60 @@
+.test {
+    width: 100vw;
+    height: 90vh;
+    margin-top: 15vh;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    background: rgba(251, 206, 55, 1);
+}
+
+.dark-theme {
+    background-color: black;
+    color: #ffffff;
+}
+
+.scale {
+    height: 15vh;
+}
+
+.scaleText {
+    font-size: 200%;
+}
+
+.test span {
+    padding-top: 10vh;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bolder;
+    font-size: larger;
+    width: 10vw;
+}
+
+.test button {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    border: none;
+    margin-left: 14vw;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.test button:hover {
+    box-shadow: 0 5px #666;
+    color: white;
+    transform: translateY(4px);
+}
+.image{
+    background-image: url("books.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 35vw;
+    height: 25vw;
+}
+.row{
+    margin: 0;
+    padding: 0 30px;
+}
