@@ -3,6 +3,7 @@
     height: 90vh;
     margin-top: 15vh;
     padding-top: 10vh;
+    padding-left: 10vw;
     padding-bottom: 10vh;
     background: rgba(251, 206, 55, 1);
 }
@@ -21,9 +22,9 @@
 }
 
 .test span {
-    padding-top: 10vh;
     font-family: 'Oswald', sans-serif;
     font-weight: bolder;
+    margin-top: 10vh;
     font-size: larger;
     width: 10vw;
 }
@@ -36,7 +37,6 @@
     outline: none;
     color: #fff;
     border: none;
-    margin-left: 14vw;
     border-radius: 15px;
     box-shadow: 0 9px #999;
 }
@@ -49,12 +49,24 @@
 .image{
     background-image: url("books.jpg");
     background-size: cover;
+    margin-top: 5vh;
     background-repeat: no-repeat;
     background-position: center;
     width: 35vw;
-    height: 25vw;
+    height: 20vw;
 }
 .row{
     margin: 0;
     padding: 0 30px;
+}
+.random{
+    display: flex;
+    width: 25vw;
+    margin-top: 12vh;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+.hey{
+    margin-top: 10vh;
 }
