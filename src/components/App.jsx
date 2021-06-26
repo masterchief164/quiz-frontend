@@ -4,6 +4,7 @@ import Landing from "./Landing";
 import Contest from "./Contest";
 import Quiz from "./Quiz";
 import Footer from "./Footer";
+import Leaderboard from "./Leaderboard";
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
 
     return <div>
         <Header change = {setView}/>
-        {(view === "Home") ? <Landing/> :(view==="Contests")? <Contest/>:<Quiz/>}
+        {(view === "Home") ? <Landing/> :(view==="Contests")? <Contest/>:(view==="Leaderboards")?<Leaderboard/>:<Quiz/>}
         <Footer/>
     </div>
 }

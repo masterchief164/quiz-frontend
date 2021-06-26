@@ -17,23 +17,24 @@ function AddQuestions() {
         e.preventDefault();
     }
     const handleNext = ()=>{
-        
+
     }
     return <section className="test">
         <Form>
             <Form.Group controlId="formBasicEmail">
-                <Form.Label>Quiz Name</Form.Label>
-                <Form.Control type="text" onChange={e => setField("qName", e.target.value)}
+                <Form.Label>Question Statement</Form.Label>
+                <Form.Control type="text" onChange={e => setField("desc", e.target.value)}
                               placeholder="Enter quiz name"/>
-                <Form.Label>Duration</Form.Label>
-                <Form.Control type="number" onChange={e => setField("duration", e.target.value)}
-                              placeholder="Duration in minutes"/>
-                <Form.Label>Date</Form.Label>
-                <Form.Control type="date" onChange={e => setField("date", e.target.value)} placeholder="Date"/>
-                <Form.Label>Time</Form.Label>
-                <Form.Control type="time" onChange={e => setField("time", e.target.value)} placeholder="Time"/>
-                <Form.Label>Organizer</Form.Label>
-                <Form.Control as="select" onChange={e => setField("organizer", e.target.value)}>
+                <Form.Label>Option 1</Form.Label>
+                <Form.Control type="text" onChange={e => setField("opt1", e.target.value)} placeholder="First Option"/>
+                <Form.Label>Option 2</Form.Label>
+                <Form.Control type="text" onChange={e => setField("opt2", e.target.value)} placeholder="Second Option"/>
+                <Form.Label>Option 3</Form.Label>
+                <Form.Control type="text" onChange={e => setField("op3", e.target.value)} placeholder="Third Option"/>
+                <Form.Label>Option 4</Form.Label>
+                <Form.Control type="text" onChange={e => setField("op3", e.target.value)} placeholder="Fourth Option"/>
+                <Form.Label>Choose the correct option</Form.Label>
+                <Form.Control as="select" onChange={e => setField("opt4", e.target.value)}>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>

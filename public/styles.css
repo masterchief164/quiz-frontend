@@ -131,3 +131,6 @@ Navbar {
 .mb-4{
     padding: 1vh;
 }
+.card-body Button{
+    margin-top: 2vh;
+}
