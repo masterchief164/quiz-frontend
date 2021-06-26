@@ -17,7 +17,8 @@ function Landing() {
                 </div>
                 <div className="col-lg-5">
                     <div className="image"/>
-                    <div className="des">Wanna host a new quiz?</div>
+                    <div className="des">Want to host a new quiz?</div>
+                    <button className="btn btn-lg bg-dark started">Get Started</button>
                 </div>
             </div>
         </div>
