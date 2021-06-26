@@ -1,6 +1,6 @@
 .test {
     width: 100vw;
-    height: 85vh;
+    height: 90vh;
     margin-top: 10vh;
     padding: 10vh 15vw;
     background: rgba(251, 206, 55, 1);
@@ -89,7 +89,7 @@ Navbar {
 .initial {
     margin-top: 10vh;
     background: rgba(251, 206, 55, 1);
-    min-height: 85vh;
+    min-height: 90vh;
 }
 
 #home {

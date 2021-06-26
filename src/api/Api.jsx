@@ -1,9 +1,9 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: 'https://sleepy-journey-51279.herokuapp.com/api',
+    baseURL: 'https://sleepy-eyrie-44003.herokuapp.com/api',
 });
 
-export const createContest = payload=> api.post("/note",payload);
-export const deleteContest = id=>api.delete("/note/"+id);
-export const getContests = ()=>api.get("/note/");
+export const createContest = payload=> api.post("/contest",payload);
+export const deleteContest = id=>api.delete("/contest/"+id);
+export const getContests = ()=>api.get("/contest/");
