@@ -1,9 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import ContestCard from "./ContestCard";
-
+import {getContests} from "../api/Api";
 function Contest(props) {
-
-
+    const[list,addToList] = useState();
+    getContests()
     return (<div className="row initial">
         <div className="container">
             <h2>Responsive card deck example</h2>
