@@ -1,7 +1,7 @@
 .test {
     width: 100vw;
     height: 85vh;
-    margin-top: 15vh;
+    margin-top: 10vh;
     padding: 10vh 15vw;
     background: rgba(251, 206, 55, 1);
 }
@@ -13,7 +13,7 @@
 }
 
 .scale {
-    height: 15vh;
+    height: 10vh;
     padding-left: 40px;
 }
 
@@ -22,7 +22,7 @@
     font-size: 150%;
 }
 
-.scaleTitle{
+.scaleTitle {
     font-size: 200%;
     padding-left: 40px;
 }
@@ -52,7 +52,8 @@
     color: white;
     transform: translateY(4px);
 }
-.image{
+
+.image {
     background-image: url("books.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -62,18 +63,19 @@
     margin-right: -10vw;
 }
 
-.btn{
+.btn {
     margin-left: 5vh;
 }
 
-.started{
+.started {
     margin-top: -4vh;
 }
-Navbar{
+
+Navbar {
     padding-left: 7vw;
 }
 
-.des{
+.des {
     font-weight: 300;
     font-family: Arial, serif;
     font-size: 24px;
@@ -84,14 +86,17 @@ Navbar{
     padding: 0 7vh;
 }
 
-.initial{
-    margin-top: 15vh;
+.initial {
+    margin-top: 10vh;
+    background: rgba(251, 206, 55, 1);
+    min-height: 85vh;
 }
-#home{
+
+#home {
     cursor: pointer;
 }
 
-.desc{
+.desc {
     font-weight: 300;
     font-family: Arial, serif;
     font-size: 24px;
@@ -99,13 +104,30 @@ Navbar{
     width: 25vw;
 }
 
-.addQuiz{
+.addQuiz {
     background: rgba(251, 206, 55, 1);
     margin: 5vh auto;
     width: 70vw;
 }
-.footer{
-    height: 15vh;
+
+.footer {
+    height: 10vh;
     background: black;
     color: white;
+    padding: 5vh 45vw;
+}
+
+.card-title {
+    color: black;
+}
+
+.card-text {
+    line-height: 20px;
+}
+.card-body {
+    background: #F9B208;
+    padding: 0;
+}
+.mb-4{
+    padding: 1vh;
 }
