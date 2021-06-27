@@ -1,13 +1,16 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Button} from "react-bootstrap";
 import TakeContest from "./TakeContest";
 
 function ContestCard(props) {
-    const [show,setShow] = useState(true);
-    function handleChange(){
+    const [show, setShow] = useState(true);
+
+    function handleChange() {
         setShow(false);
     }
-    return show?(<div className="col mb-4">
+
+
+    return show ? (<div className="col mb-4">
         <div className="card border-0">
             <div className="card-body" style={{padding: "5px"}}>
                 <img src="https://dummyimage.com/600x400/000/fff.jpg" className="card-img-top" alt="..."/>
@@ -18,6 +21,7 @@ function ContestCard(props) {
                 <Button className="btn btn-dark" onClick={handleChange}>Participate</Button>
             </div>
         </div>
-    </div>):<TakeContest id ={props.id}/>}
+    </div>) : <TakeContest questions={props.contest.questions}/>
+}
 
 export default ContestCard;

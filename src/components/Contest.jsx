@@ -1,39 +1,33 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import ContestCard from "./ContestCard";
 import {getContests} from "../api/Api";
 
-function Contest() {
-    /*const [list, addToList] = useState([]);
-    useEffect(() => {
-        getContests().then(result => addToList(result.data));
-    }, [list]);*/
+let result = []
 
+getContests().then(res=> {
+    result = res;
+    console.log(result);
+})
+function Contest() {
+    console.log("running")
     return (<div className="row initial">
         <div className="container">
             <h2>Present Contests</h2>
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 ">
-                <ContestCard/>
-                <ContestCard/>
-                <ContestCard/>
-                <ContestCard/>
-                <ContestCard/>
-                <ContestCard/>
-                <ContestCard/>
-                <ContestCard/>
-                <ContestCard/>
-                <ContestCard/>
-                <ContestCard/>
-                <ContestCard/>
-                <ContestCard/>
-                <ContestCard/>
-                <ContestCard/>
-                <ContestCard/>
-                <ContestCard/>
-                <ContestCard/>
-                <ContestCard/>
+                {result.data.data.map((contest) => {
+                    return <ContestCard
+                        key={contest._id}
+                        id={contest._id}
+                        title={contest.name}
+                        duration={contest.duration}
+                        time={contest.time}
+                        host={contest.organizer}
+                        contest={contest}/>
+                })}
             </div>
         </div>
     </div>)
 }
+
 
 export default Contest;

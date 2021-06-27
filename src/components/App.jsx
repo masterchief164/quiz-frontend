@@ -5,14 +5,16 @@ import Contest from "./Contest";
 import Quiz from "./Quiz";
 import Footer from "./Footer";
 import Leaderboard from "./Leaderboard";
+import {getContests} from "../api/Api";
 
 function App() {
-
+    const [contests,setContests ] = useState();
+    getContests().then(contest=>setContests(contest));
     const [view, setView] = useState("Home");
 
     return <div>
-        <Header change = {setView}/>
-        {(view === "Home") ? <Landing/> :(view==="Contests")? <Contest/>:(view==="Leaderboards")?<Leaderboard/>:<Quiz/>}
+        <Header change = {setView} contests = {contests} setContests = {setContests}/>
+        {(view === "Home") ? <Landing/> :(view==="Contests")? <Contest contests = {contests}/>:(view==="Leaderboards")?<Leaderboard/>:<Quiz/>}
         <Footer/>
     </div>
 }

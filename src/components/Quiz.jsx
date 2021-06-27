@@ -1,29 +1,55 @@
 import React, {useState} from "react";
 import {Button, Form} from "react-bootstrap";
 import AddQuestions from "./AddQuestions";
+import {createContest} from "../api/Api";
 
+let questionArray=[]
 const Quiz = () => {
     const [first, setFirst] = useState(true);
-    const [form, setForm] = useState({})
+    const [formContest, setFormContest] = useState({})
 
     const setField = (field, value) => {
-        setForm(prevState => {
+        setFormContest(prevState => {
+            console.log(formContest);
             return {
                 ...prevState, [field]: value
             }
         })
     }
     const handleSubmit = (e) => {
+
         setFirst(false);
         e.preventDefault();
     }
+
+    const handleChange = (k) => {
+        console.log(k);
+        console.log(questionArray);
+        questionArray = [...questionArray, k];
+        console.log(questionArray);
+    }
+
+    const handleQSubmit = () => {
+        const obj = {...formContest,questions:questionArray}
+        console.log(obj)
+        console.log(questionArray);
+        createContest(obj).then((res) => {
+            if (res.status === 200)
+                alert("Contest Created");
+            else
+                alert("Unfortunately! The contest was not created. Please try again");
+        });
+        questionArray = [];
+    }
+
+
     return first ? (
         <div className="test">
             <section className="addQuiz">
                 <Form>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Quiz Name</Form.Label>
-                        <Form.Control type="text" onChange={e => setField("qName", e.target.value)}
+                        <Form.Control type="text" onChange={e => setField("name", e.target.value)}
                                       placeholder="Enter quiz name"/>
                         <Form.Label>Duration</Form.Label>
                         <Form.Control type="number" onChange={e => setField("duration", e.target.value)}
@@ -43,7 +69,7 @@ const Quiz = () => {
                 </Form>
             </section>
         </div>
-    ) : <AddQuestions/>;
+    ) : <AddQuestions formData={formContest} change={handleChange} sub={handleQSubmit}/>;
 };
 
 
