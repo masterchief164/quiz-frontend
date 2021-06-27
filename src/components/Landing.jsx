@@ -3,7 +3,7 @@ import Register from "./Register";
 import {Zoom} from "@material-ui/core";
 
 
-function Landing() {
+function Landing(props) {
     const [registerLogin,setRegisterLogin] = useState(true);
     function handleRegister() {
         setRegisterLogin(prevState => !prevState);
@@ -27,7 +27,7 @@ function Landing() {
                 </div>
             </div>
         </div>
-    </div>):(<Zoom in={true} ><Register toggle = {setRegisterLogin}/></Zoom>)
+    </div>):(<Zoom in={true} ><Register participant = {props.participant} toggle = {setRegisterLogin}/></Zoom>)
 }
 
 export default Landing;

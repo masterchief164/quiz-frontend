@@ -10,7 +10,7 @@ getContests().then(res => {
 })
 let contests = ""
 
-function Contest() {
+function Contest(props) {
     const [show, setShow] = useState(true);
 
     function handleChange(k) {
