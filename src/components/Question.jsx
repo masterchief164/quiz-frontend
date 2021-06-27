@@ -2,8 +2,8 @@ import React from "react";
 import {Form} from "react-bootstrap";
 
 function Question(props) {
-    function change() {
-
+    function change(e) {
+        props.scoring(props.id,e.target.value);
     }
     return <Form.Group className="marginTop">
         <Form.Label>{props.desc}</Form.Label>

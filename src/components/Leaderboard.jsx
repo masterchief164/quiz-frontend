@@ -7,7 +7,8 @@ let result = []
 
 getParticipants().then(res => {
     result = res.data.data;
-})
+    result.sort((a, b) => a.score > b.score ? 1 : -1)
+});
 
 function Leaderboard() {
 
@@ -22,7 +23,7 @@ function Leaderboard() {
         </tr>
         </thead>
         <tbody>
-        {result.map((participant,index)=> {
+        {result.map((participant, index) => {
             return (<tr>
                 <td>{index}</td>
                 <td>{participant.name}</td>
