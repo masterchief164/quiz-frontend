@@ -1,0 +1,171 @@
+.test {
+    width: 100vw;
+    height: 90vh;
+    margin-top: 10vh;
+    padding: 10vh 15vw;
+    background: rgba(251, 206, 55, 1);
+}
+
+.dark-theme {
+    background-color: black;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.scale {
+    height: 10vh;
+    padding-left: 40px;
+}
+
+.scaleText {
+    margin: 0 0.5vw;
+    font-size: 150%;
+}
+
+.scaleTitle {
+    font-size: 200%;
+    padding-left: 40px;
+}
+
+.test h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bolder;
+    font-size: 75px;
+    margin: 5vh;
+}
+
+.test button {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    margin-top: 5vh;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.test button:hover {
+    box-shadow: 0 5px #666;
+    color: white;
+    transform: translateY(4px);
+}
+
+.image {
+    background-image: url("books.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 35vw;
+    height: 20vw;
+    margin-right: -10vw;
+}
+
+.btn {
+    margin-left: 5vh;
+}
+
+.started {
+    margin-top: -4vh;
+}
+
+Navbar {
+    padding-left: 7vw;
+}
+
+.des {
+    font-weight: 300;
+    font-family: Arial, serif;
+    font-size: 24px;
+    margin: 4vh;
+}
+
+.back {
+    padding: 0 7vh;
+}
+
+.initial {
+    margin-top: 10vh;
+    background: rgba(251, 206, 55, 1);
+    min-height: 90vh;
+    padding: 5vh;
+}
+
+#home {
+    cursor: pointer;
+}
+
+.desc {
+    font-weight: 300;
+    font-family: Arial, serif;
+    font-size: 24px;
+    margin: 4vh;
+    width: 25vw;
+}
+
+.addQuiz {
+    background: rgba(251, 206, 55, 1);
+    margin: 5vh auto;
+    width: 70vw;
+}
+
+.footer {
+    height: 10vh;
+    background: black;
+    color: white;
+    padding: 5vh 45vw;
+}
+
+.card-title {
+    color: black;
+}
+
+.card-text {
+    line-height: 20px;
+}
+.card-body {
+    background: #F9B208;
+    padding: 0;
+}
+.mb-4{
+    padding: 1vh;
+}
+.card-body Button{
+    margin-top: 2vh;
+}
+.hello{
+    margin: 2vh 3vw 2vh 3vw;
+}
+.marginTop
+{
+    margin: 5vh;
+}
+.btn-extra {
+    border-radius: 20px;
+}
+.form-row {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.spacer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+.spacer button {
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+.form-cont {
+    background-image: linear-gradient(66.47deg, #120d4f, #5e12ce);
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 6;
+}
