@@ -11,6 +11,7 @@ let participant = null;
 function App() {
     const changeParticipant=(k)=>{
         participant= k;
+        console.log(participant)
     }
     const [contests,setContests ] = useState();
     useEffect(()=>{

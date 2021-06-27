@@ -30,12 +30,13 @@ function Contest(props) {
                         time={contest.time}
                         host={contest.organizer}
                         contest={contest}
+                        participant={props.participant}
                         change={setShow}
                         pass={handleChange}/>
                 })}
             </div>
         </div>
-    </div>) : <TakeContest questions={contests}/>
+    </div>) : <TakeContest participant={props.participant} questions={contests}/>
 }
 
 

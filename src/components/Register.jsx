@@ -20,8 +20,12 @@ function Register(props) {
     }
     const handleSubmit=(e)=>{
         createParticipant(formContest).then((res) => {
-            if (res.status === 200)
+            console.log(formContest);
+            if (res.status === 200) {
                 alert("Participant Registered");
+                props.participant(res.data.data)
+                console.log(res.data.data)
+            }
             else
                 alert("Unable to register! Please try again");
         });

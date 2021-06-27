@@ -2,19 +2,29 @@ import React from "react";
 import Question from "./Question";
 import {Button} from "react-bootstrap";
 import {updateParticipants} from "../api/Api";
-const parId = 0;
+let parId = 0;
 function TakeContest(props) {
-    let k = [...props.correctOpt]
+    parId = props.participant.id;
+    let k = [];
+
+
     function handleSubmit(idx,val) {
         k[idx]=val;
     }
     function finalSubmit() {
-        let sco = parId
+        let sco = props.participant.score;
+        console.log(props.questions)
+        const que = props.questions.questions;
+        que.forEach((obj)=>{k.push(obj.correctOpt);
+        });
         k.forEach((ele,index)=>{
-            if(ele===props.correctOpt[index])
+            if(ele===props.correctOpt)
                 sco++;
         });
-        updateParticipants(parId).then(()=>alert("quiz submitted"));
+        console.log(sco);
+        let newParticipant = props.participant;
+        newParticipant.score = sco;
+        updateParticipants(parId,newParticipant).then(()=>alert("quiz submitted"));
     }
     return (<div className="initial">
         {props.questions.questions.map((question,index) => {

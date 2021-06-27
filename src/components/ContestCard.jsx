@@ -4,8 +4,12 @@ import {Button} from "react-bootstrap";
 function ContestCard(props) {
 
     function handleChange() {
-        props.change(false);
-        props.pass(props.contest)
+        if (props.participant === null)
+            alert("Please register or login")
+        else {
+            props.change(false);
+            props.pass(props.contest)
+        }
     }
 
 

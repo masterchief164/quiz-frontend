@@ -25,7 +25,7 @@ function AddQuestions(props) {
     }
     return <section className="test">
         <Form>
-            <Form.Group controlId="formBasicEmail">
+            <Form.Group controlId="form">
                 <Form.Label>Question Statement</Form.Label>
                 <Form.Control type="text" onChange={e => setField("desc", e.target.value)} value={formQuestion.desc}
                               placeholder="Enter question description"/>

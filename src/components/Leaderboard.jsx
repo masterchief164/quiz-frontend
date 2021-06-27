@@ -28,7 +28,7 @@ function Leaderboard() {
                 <td>{index+1}</td>
                 <td>{participant.name}</td>
                 <td>{participant.score}</td>
-                <td>amazing</td>
+                <td>{participant.username}</td>
             </tr>)
         })}
         </tbody>
