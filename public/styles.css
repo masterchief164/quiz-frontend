@@ -142,3 +142,30 @@ Navbar {
 {
     margin: 5vh;
 }
+.btn-extra {
+    border-radius: 20px;
+}
+.form-row {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.spacer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+.spacer button {
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+.form-cont {
+    background-image: linear-gradient(66.47deg, #120d4f, #5e12ce);
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 6;
+}

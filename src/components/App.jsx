@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import Leaderboard from "./Leaderboard";
 import {getContests} from "../api/Api";
 
+let participant = null;
 function App() {
     const [contests,setContests ] = useState();
     useEffect(()=>{

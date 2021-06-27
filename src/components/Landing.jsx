@@ -1,8 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
+import Register from "./Register";
+import {Zoom} from "@material-ui/core";
 
 
 function Landing() {
-    return <div className="test">
+    const [registerLogin,setRegisterLogin] = useState(true);
+    function handleRegister() {
+        setRegisterLogin(prevState => !prevState);
+    }
+    return registerLogin? (<div className="test">
         <div className="container-fluid back">
             <div className="row">
                 <div className="col-lg-5">
@@ -11,8 +17,8 @@ function Landing() {
                         <span>The best website for participating and hosting quizzing competitions</span>
                     </div>
                     <div className="but">
-                        <button className="btn btn-lg bg-dark">Register</button>
-                        <button className="btn btn-lg bg-dark">Login</button>
+                        <button onClick={handleRegister} className="btn btn-lg bg-dark">Register</button>
+                        <button onClick={handleRegister} className="btn btn-lg bg-dark">Login</button>
                     </div>
                 </div>
                 <div className="col-lg-5">
@@ -21,7 +27,7 @@ function Landing() {
                 </div>
             </div>
         </div>
-    </div>
+    </div>):(<Zoom in={true} ><Register toggle = {setRegisterLogin}/></Zoom>)
 }
 
 export default Landing;

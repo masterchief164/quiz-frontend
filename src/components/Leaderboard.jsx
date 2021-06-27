@@ -16,16 +16,16 @@ function Leaderboard() {
     return <div className="initial"><Table responsive striped bordered hover className="table-responsive-lg" size="xl">
         <thead>
         <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Score</th>
             <th>Username</th>
         </tr>
         </thead>
         <tbody>
         {result.map((participant, index) => {
             return (<tr>
-                <td>{index}</td>
+                <td>{index+1}</td>
                 <td>{participant.name}</td>
                 <td>{participant.score}</td>
                 <td>amazing</td>
