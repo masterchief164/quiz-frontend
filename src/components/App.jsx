@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Header from "./Header";
 import Landing from "./Landing";
 import Contest from "./Contest";
@@ -9,7 +9,9 @@ import {getContests} from "../api/Api";
 
 function App() {
     const [contests,setContests ] = useState();
-    getContests().then(contest=>setContests(contest));
+    useEffect(()=>{
+        getContests().then(contest=>setContests(contest));
+    },[])
     const [view, setView] = useState("Home");
 
     return <div>

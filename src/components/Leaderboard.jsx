@@ -1,7 +1,17 @@
 import React from "react";
 import {Table} from "react-bootstrap";
+import {getParticipants} from "../api/Api";
+
+
+let result = []
+
+getParticipants().then(res => {
+    result = res.data.data;
+})
 
 function Leaderboard() {
+
+    console.log(result);
     return <div className="initial"><Table responsive striped bordered hover className="table-responsive-lg" size="xl">
         <thead>
         <tr>
@@ -12,23 +22,14 @@ function Leaderboard() {
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td colSpan="2">Larry the Bird</td>
-            <td>@twitter</td>
-        </tr>
+        {result.map((participant,index)=> {
+            return (<tr>
+                <td>{index}</td>
+                <td>{participant.name}</td>
+                <td>{participant.score}</td>
+                <td>amazing</td>
+            </tr>)
+        })}
         </tbody>
     </Table>
     </div>

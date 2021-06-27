@@ -7,3 +7,4 @@ const api = axios.create({
 export const createContest = payload=> api.post("/contest",payload);
 export const deleteContest = id=>api.delete("/contest/"+id);
 export const getContests = ()=>api.get("/contest/");
+export const getParticipants = ()=>api.get("/participants")

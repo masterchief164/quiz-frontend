@@ -90,6 +90,7 @@ Navbar {
     margin-top: 10vh;
     background: rgba(251, 206, 55, 1);
     min-height: 90vh;
+    padding: 5vh;
 }
 
 #home {
@@ -133,4 +134,11 @@ Navbar {
 }
 .card-body Button{
     margin-top: 2vh;
+}
+.hello{
+    margin: 2vh 3vw 2vh 3vw;
+}
+.marginTop
+{
+    margin: 5vh;
 }

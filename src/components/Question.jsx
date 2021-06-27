@@ -2,10 +2,12 @@ import React from "react";
 import {Form} from "react-bootstrap";
 
 function Question(props) {
+    function change() {
 
-    return<Form.Group>
+    }
+    return <Form.Group className="marginTop">
         <Form.Label>{props.desc}</Form.Label>
-        <Form.Control as="select">
+        <Form.Control as="select" onChange={change}>
             <option>{props.opt1}</option>
             <option>{props.opt2}</option>
             <option>{props.opt3}</option>

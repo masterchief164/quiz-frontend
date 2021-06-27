@@ -1,18 +1,25 @@
-import React from "react";
+import React, {useState} from "react";
 import ContestCard from "./ContestCard";
 import {getContests} from "../api/Api";
+import TakeContest from "./TakeContest";
 
 let result = []
 
-getContests().then(res=> {
+getContests().then(res => {
     result = res;
-    console.log(result);
 })
+let contests = ""
+
 function Contest() {
-    console.log("running")
-    return (<div className="row initial">
+    const [show, setShow] = useState(true);
+
+    function handleChange(k) {
+        contests = k;
+    }
+
+    return show ? (<div className="row initial">
         <div className="container">
-            <h2>Present Contests</h2>
+            <h2>All Contests</h2>
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 ">
                 {result.data.data.map((contest) => {
                     return <ContestCard
@@ -22,11 +29,13 @@ function Contest() {
                         duration={contest.duration}
                         time={contest.time}
                         host={contest.organizer}
-                        contest={contest}/>
+                        contest={contest}
+                        change={setShow}
+                        pass={handleChange}/>
                 })}
             </div>
         </div>
-    </div>)
+    </div>) : <TakeContest questions={contests}/>
 }
 
 
