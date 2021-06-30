@@ -10,3 +10,4 @@ export const getContests = ()=>api.get("/contest/");
 export const getParticipants = ()=>api.get("/participants")
 export const updateParticipants = (id,payload)=>api.put("/participants/"+id,payload)
 export const createParticipant = (payload)=>api.post("/participants",payload);
+export const loginParticipant = (payload) => api.post("/participants/login",payload);

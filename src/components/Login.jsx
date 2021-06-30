@@ -1,12 +1,10 @@
 import React, {useState} from "react";
-import {Button, Form} from "react-bootstrap";
-import {createParticipant} from "../api/Api";
 import {Link, useHistory} from "react-router-dom";
+import {Button, Form} from "react-bootstrap";
+import {loginParticipant} from "../api/Api";
 
-
-function Register(props) {
-    const def = {}
-    const [formContest, setFormContest] = useState(def)
+function Login(props) {
+    const [formContest, setFormContest] = useState({})
     const setField = (field, value) => {
         setFormContest(prevState => {
             return {
@@ -16,16 +14,17 @@ function Register(props) {
     }
     const history = useHistory();
     const handleSubmit = (e) => {
-        createParticipant(formContest).then((res) => {
+        loginParticipant(formContest).then((res) => {
             if (res.status === 200) {
-                alert("Participant Registered");
-                props.regi(res.data.data)
+                alert("Login Successful");
+                props.logi(res.data.participant)
             } else
-                alert("Unable to register! Please try again");
+                alert("Unable to login! Please try again");
         });
         history.push("/")
         e.preventDefault();
     }
+
     return <div className="initial" style={{padding: "10vh 35vw"}}>
         <div className="form p-3" id="form">
             <div className="spacer" style={{height: "6vh", width: "100%"}}>
@@ -36,26 +35,20 @@ function Register(props) {
             </div>
             <Form>
                 <Form.Group>
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control type="text" onChange={e => setField("email", e.target.value)}
-                                  placeholder="Email"/>
                     <Form.Label>Username</Form.Label>
                     <Form.Control type="text" onChange={e => setField("username", e.target.value)}
                                   placeholder="Username"/>
-                    <Form.Label>Name</Form.Label>
-                    <Form.Control type="text" onChange={e => setField("name", e.target.value)} placeholder="Name"/>
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" onChange={e => setField("password", e.target.value)}
                                   placeholder="Password"/>
                     <Button className="btn btn-lg bg-dark" style={{margin: "2vh"}} variant="dark" type="submit"
                             onClick={handleSubmit}>
-                        Register
+                        Login
                     </Button>
                 </Form.Group>
-
             </Form>
         </div>
     </div>
 }
 
-export default Register;
+export default Login;

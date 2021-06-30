@@ -8,10 +8,10 @@ function Question(props) {
     return <Form.Group className="marginTop">
         <Form.Label>{props.desc}</Form.Label>
         <Form.Control as="select" onChange={change}>
-            <option>{props.opt1}</option>
-            <option>{props.opt2}</option>
-            <option>{props.opt3}</option>
-            <option>{props.opt4}</option>
+            <option value={"1"}>{props.opt1}</option>
+            <option value={"2"}>{props.opt2}</option>
+            <option value={"3"}>{props.opt3}</option>
+            <option value={"4"}>{props.opt4}</option>
         </Form.Control>
     </Form.Group>
 }

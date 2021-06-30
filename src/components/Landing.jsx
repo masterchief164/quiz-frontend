@@ -1,14 +1,8 @@
-import React, {useState} from "react";
-import Register from "./Register";
-import {Zoom} from "@material-ui/core";
+import React from "react";
+import {Link} from "react-router-dom";
 
-
-function Landing(props) {
-    const [registerLogin,setRegisterLogin] = useState(true);
-    function handleRegister() {
-        setRegisterLogin(prevState => !prevState);
-    }
-    return registerLogin? (<div className="test">
+function Landing() {
+    return <div className="test">
         <div className="container-fluid back">
             <div className="row">
                 <div className="col-lg-5">
@@ -17,8 +11,12 @@ function Landing(props) {
                         <span>The best website for participating and hosting quizzing competitions</span>
                     </div>
                     <div className="but">
-                        <button onClick={handleRegister} className="btn btn-lg bg-dark">Register</button>
-                        <button onClick={handleRegister} className="btn btn-lg bg-dark">Login</button>
+                        <Link to="/register">
+                            <button className="btn btn-lg bg-dark">Register</button>
+                        </Link>
+                        <Link to="/login">
+                            <button className="btn btn-lg bg-dark">Login</button>
+                        </Link>
                     </div>
                 </div>
                 <div className="col-lg-5">
@@ -27,7 +25,7 @@ function Landing(props) {
                 </div>
             </div>
         </div>
-    </div>):(<Zoom in={true} ><Register participant = {props.participant} toggle = {setRegisterLogin}/></Zoom>)
+    </div>
 }
 
 export default Landing;

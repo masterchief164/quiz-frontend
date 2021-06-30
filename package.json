@@ -2,7 +2,6 @@
   "name": "quiz-frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http//:masterchief164.github,io/quiz-frontend",
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@testing-library/jest-dom": "^5.14.1",
@@ -43,6 +42,7 @@
     ]
   },
   "devDependencies": {
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "react-router-dom": "^5.2.0"
   }
 }

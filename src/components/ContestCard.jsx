@@ -1,18 +1,17 @@
 import React from "react";
 import {Button} from "react-bootstrap";
+import {useHistory} from "react-router-dom";
 
 function ContestCard(props) {
-
-    function handleChange() {
+    const history = useHistory();
+    const handleClick = () => {
         if (props.participant === null)
-            alert("Please register or login")
+            alert("Please login or register.")
         else {
-            props.change(false);
-            props.pass(props.contest)
+            props.setCont(props.contest);
+            history.push("/take");
         }
     }
-
-
     return (<div className="col mb-4">
         <div className="card border-0">
             <div className="card-body" style={{padding: "5px"}}>
@@ -21,7 +20,7 @@ function ContestCard(props) {
                 <p className="card-text">{props.host}</p>
                 <p className="card-text">Starts : {props.time}</p>
                 <p className="card-text">Duration : {props.duration}</p>
-                <Button className="btn btn-dark" onClick={handleChange}>Participate</Button>
+                <Button onClick={handleClick} className="btn btn-dark">Participate</Button>
             </div>
         </div>
     </div>)

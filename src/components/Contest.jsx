@@ -1,43 +1,35 @@
-import React, {useState} from "react";
-import ContestCard from "./ContestCard";
+import React, {useEffect, useState} from "react";
 import {getContests} from "../api/Api";
-import TakeContest from "./TakeContest";
+import ContestCard from "./ContestCard";
 
-let result = []
+function Contests(props) {
+    const [contestsList, setContestsList] = useState([]);
+    useEffect(() => {
+        getContests().then(res => {
+            setContestsList(res.data.data);
+        })
+    }, []);
 
-getContests().then(res => {
-    result = res;
-})
-let contests = ""
-
-function Contest(props) {
-    const [show, setShow] = useState(true);
-
-    function handleChange(k) {
-        contests = k;
-    }
-
-    return show ? (<div className="row initial">
+    return <div className="row initial">
         <div className="container">
             <h2>All Contests</h2>
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 ">
-                {result.data.data.map((contest) => {
+                {contestsList.map((contest) => {
                     return <ContestCard
                         key={contest._id}
                         id={contest._id}
+                        setCont={props.cont}
                         title={contest.name}
                         duration={contest.duration}
                         time={contest.time}
                         host={contest.organizer}
                         contest={contest}
                         participant={props.participant}
-                        change={setShow}
-                        pass={handleChange}/>
+                    />
                 })}
             </div>
         </div>
-    </div>) : <TakeContest participant={props.participant} questions={contests}/>
+    </div>
 }
 
-
-export default Contest;
+export default Contests;
