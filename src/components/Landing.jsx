@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-function Landing() {
+function Landing(props) {
     return <div className="test">
         <div className="container-fluid back">
             <div className="row">
@@ -10,14 +10,14 @@ function Landing() {
                     <div className="des">
                         <span>The best website for participating and hosting quizzing competitions</span>
                     </div>
-                    <div className="but">
+                    {!props.logged&&<div className="but">
                         <Link to="/register">
                             <button className="btn btn-lg bg-dark">Register</button>
                         </Link>
                         <Link to="/login">
                             <button className="btn btn-lg bg-dark">Login</button>
                         </Link>
-                    </div>
+                    </div>}
                 </div>
                 <div className="col-lg-5">
                     <div className="image"/>

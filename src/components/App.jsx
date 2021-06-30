@@ -24,7 +24,7 @@ function App() {
                 <Route path="/contests" exact render={() => (<Contests cont={setContest} participant={participant}/>)}/>
                 <Route path="/leaderboards" exact component={Leaderboards}/>
                 <Route path="/create" exact render={() => (<Quiz data={setForm}/>)}/>
-                <Route path="/" exact component={Landing}/>
+                <Route path="/" exact render={()=>(<Landing logged={participant} />)}/>
                 <Route path="/register" exact render={() => (<Register regi={setParticipant}/>)}/>
                 <Route path="/login" exact render={() => (<Login logi={setParticipant}/>)}/>
                 <Route path="/take" exact render={() => (<TakeContest cont={contest} participant={participant}/>)}/>
