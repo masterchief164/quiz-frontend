@@ -115,7 +115,8 @@ Navbar {
     height: 10vh;
     background: black;
     color: white;
-    padding: 5vh 45vw;
+
+    padding: 5vh 40vw;
 }
 
 .card-title {
